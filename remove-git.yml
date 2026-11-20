@@ -1,0 +1,9 @@
+---
+- name: Remove Git from the staging server
+  hosts: staging
+  become: true
+  tasks:
+    - name: Remove Git
+      ansible.builtin.apt:
+        name: git
+        state: absent

@@ -1,0 +1,11 @@
+---
+- name: Install Git on the staging server
+  hosts: staging
+  become: true
+  tasks:
+    - name: Install Git
+      ansible.builtin.apt:
+        name: git
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
